@@ -13,7 +13,9 @@ router.get("/serial") { req, res in
 router.get("/concurrent") { req, res in
     let inputs = req.searchParams["inputs", default: "0"].components(separatedBy: ",")
     let values = try await inputs.concurrentMap { input in
-        try await fetch("https://starter-kit-concurrency.app.swift.cloud/op/fib?input=\(input)").text()
+        let _res = try await fetch("/op/fib?input=\(input)")
+        console.log("status:", _res.status)
+        return try await _res.text()
     }
     let text = values.joined(separator: ", ")
     try await res.status(200).send(text)
