@@ -15,7 +15,7 @@ func fibonacciSeries(_ num: Int) -> Int {
         n2 = nR + n2
     }
 
-    sleep(1)
+    usleep(1_000_000)
 
     return n1
 }
