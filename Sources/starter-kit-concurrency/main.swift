@@ -4,7 +4,7 @@ import CollectionConcurrencyKit
 let router = Router()
 
 router.use { req, res in
-    print("url:", req.url.path)
+    console.log("url:", req.url.path)
 }
 
 router.get("/serial") { req, res in
