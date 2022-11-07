@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "collectionconcurrencykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnSundell/CollectionConcurrencyKit.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b4f23e24b5a1bff301efc5e70871083ca029ff95"
+      }
+    },
+    {
+      "identity" : "compute",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AndrewBarba/Compute",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b8d8e7c4628ddc1d6aa32a632fc43cbcdf093332"
+      }
+    }
+  ],
+  "version" : 2
+}

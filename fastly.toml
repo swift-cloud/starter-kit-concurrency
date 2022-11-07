@@ -1,0 +1,7 @@
+language = "swift"
+manifest_version = 2
+
+[local_server]
+  [local_server.backends]
+    [local_server.backends.'localhost']
+      url = "http://localhost:7676/"
