@@ -13,7 +13,7 @@ router.get("/serial") { req, res in
 router.get("/concurrent") { req, res in
     let inputs = req.searchParams["inputs", default: "0"].components(separatedBy: ",")
     let values = try await inputs.concurrentMap { input in
-        try await fetch("/op/fib", .options(searchParams: ["input": input])).text()
+        try await fetch("/op/fib?input=\(input)").text()
     }
     let text = values.joined(separator: ", ")
     try await res.status(200).send(text)
