@@ -17,7 +17,7 @@ func fibonacciSeries(_ num: Int) -> Int {
 
     let now = Date().timeIntervalSince1970
 
-    while (Date().timeIntervalSince1970 - now < 1) {
+    while (Date().timeIntervalSince1970 - now < 0.1) {
         // do stuff
     }
 
