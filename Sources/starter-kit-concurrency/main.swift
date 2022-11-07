@@ -10,7 +10,7 @@ router.use { req, res in
 router.get("/serial") { req, res in
     let inputs = req.searchParams["inputs", default: "0"].components(separatedBy: ",")
     let values = inputs.map { fibonacciSeries(.init($0) ?? 0) }
-    let text = values.map(String.init).joined(separator: ", ")
+    let text = values.map(String.init).joined(separator: "\n")
     try await res.status(200).send(text)
 }
 
@@ -21,7 +21,7 @@ router.get("/concurrent") { req, res in
         console.log("status:", _res.status)
         return try await _res.text()
     }
-    let text = values.joined(separator: ", ")
+    let text = values.joined(separator: "\n")
     try await res.status(200).send(text)
 }
 
