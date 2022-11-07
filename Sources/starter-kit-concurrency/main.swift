@@ -3,6 +3,10 @@ import CollectionConcurrencyKit
 
 let router = Router()
 
+router.use { req, res in
+    print("url:", req.url.path)
+}
+
 router.get("/serial") { req, res in
     let inputs = req.searchParams["inputs", default: "0"].components(separatedBy: ",")
     let values = inputs.map { fibonacciSeries(.init($0) ?? 0) }
