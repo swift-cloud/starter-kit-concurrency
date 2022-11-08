@@ -19,6 +19,9 @@ router.get("/concurrent") { req, res in
     let values = try await inputs.concurrentMap { input in
         let _res = try await fetch("/op/fib?input=\(input)")
         console.log("status:", _res.status)
+        for (key, value) in _res.headers.entries() {
+            console.log("\(key):", value)
+        }
         return try await _res.text()
     }
     let text = values.joined(separator: "\n")
