@@ -17,7 +17,7 @@ router.get("/serial") { req, res in
 router.get("/concurrent") { req, res in
     let inputs = req.searchParams["inputs", default: "0"].components(separatedBy: ",")
     let values = try await inputs.concurrentMap { input in
-        let _res = try await fetch("/op/fib?input=\(input)")
+        let _res = try await fetch("https://sc-0ang83qmtutjlohg6gzbs4.edgecompute.app/op/fib?input=\(input)")
         console.log("status:", _res.status)
         for (key, value) in _res.headers.entries() {
             console.log("\(key):", value)
